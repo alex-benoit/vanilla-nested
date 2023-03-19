@@ -30,7 +30,7 @@ module VanillaNested
       classes = "vanilla-nested-add #{link_classes}"
       data = {
         'container-selector': container_selector,
-        'html': html_escape(html),
+        'html': escape_once(html),
         'method-for-insert': method_for_insert
       }
 
