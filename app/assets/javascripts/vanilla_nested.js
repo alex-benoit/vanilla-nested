@@ -6,7 +6,13 @@
       element = element.closest('.vanilla-nested-add')
 
     const data = element.dataset;
-    const container = document.querySelector(data.containerSelector);
+
+    let container
+    if (data.containerSelector === 'previousElementSibling') {
+      container = element.previousElementSibling
+    } else {
+      container = document.querySelector(data.containerSelector)
+    }
     const newHtml = decodeURIComponent(data.html.replace(/_idx_placeholder_/g, Date.now()));
 
     // insert and store reference
