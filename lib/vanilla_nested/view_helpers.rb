@@ -30,7 +30,7 @@ module VanillaNested
       classes = "vanilla-nested-add #{link_classes}"
       data = {
         'container-selector': container_selector,
-        'html': escape_once(html),
+        'html': ERB::Util.url_encode(html),
         'method-for-insert': method_for_insert
       }
 
